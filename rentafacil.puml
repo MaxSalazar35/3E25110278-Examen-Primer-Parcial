@@ -1,0 +1,55 @@
+@startuml rentafacil
+class Marca
+class Placa
+class AnioDeFabricacion
+class Precio
+class Modelo
+class Vehiculo{
+    -AnioDeFabricacion anio
+    -Precio precio
+    -Placa placa
+    -Marca marca
+    -Modelo modelo  
+}
+class Carga
+class Cilindrada
+
+class Auto
+class Moto
+class Camioneta
+
+Auto --|> Vehiculo
+Moto --|> Vehiculo 
+Camioneta --|> Vehiculo
+
+Moto *-- Cilindrada
+Camioneta *-- Carga
+
+
+class Id
+class Nombre
+class Dni
+class NumeroDeTelefono
+class Cliente{
+    -Nombre nombre
+    -Id id
+    -Dni dni
+    -NumeroDeTelefono numero
+}
+
+class Estado
+class FechaInicio
+class FechaFin
+class Codigo
+class Alquiler{
+    -Estado estado
+    -FechaInicio fechainicio 
+    -FechaFin fechafin 
+    -Codigo codigo 
+}
+
+
+Cliente "1" o-- "[1,2,3]" Vehiculo
+
+
+@enduml
